@@ -1,94 +1,413 @@
-👻 GhostMode
+# 👻 GhostMode
 
-GhostMode is an Android privacy application designed to provide a discreet and secure space for storing private photos and other sensitive media.
+### 🔐 A Privacy-Focused Android Vault for Your Personal Media
 
-The app uses a decoy notes interface to provide an additional layer of privacy. The private vault can be accessed through the designated authentication mechanism.
+**GhostMode** is a privacy-focused Android application designed to provide a discreet and secure space for storing private photos and sensitive media.
 
-✨ Features
+The application combines a **decoy notes interface**, **authentication**, **biometric security**, and **encrypted local storage** to create an additional layer of privacy for personal content.
 
-- 🔐 Secure private vault
-- 📝 Decoy notes interface
-- 🖼️ Private photo storage
-- 🔒 Encrypted storage for sensitive data
-- 👆 Biometric authentication support
-- 🛡️ Privacy-focused architecture
-- 📱 Modern Android UI using Jetpack Compose
+> ⚠️ **Educational Project:** GhostMode is developed for learning and experimentation with Android privacy, authentication, encryption, and secure local storage.
 
-🛠️ Tech Stack
+---
 
-- Language: Kotlin
-- UI: Jetpack Compose
-- Database/Storage: Android local storage
-- Security: Android Cryptography APIs
-- Authentication: Biometric Authentication
-- Build System: Gradle
-- IDE: Android Studio
+## ✨ Features
 
-📱 Requirements
+* 🔐 **Secure Private Vault**
+  Store private photos and sensitive media in a protected environment.
 
-- Android 12 or higher
-- Android Studio
-- Kotlin
-- Gradle
+* 📝 **Decoy Notes Interface**
+  A normal-looking notes interface provides a discreet front layer.
 
-🚀 Getting Started
+* 🖼️ **Private Photo Storage**
+  Keep selected personal images inside the private vault.
 
-1. Clone the repository
+* 🔒 **Encrypted Storage**
+  Sensitive data is intended to be protected using Android cryptography mechanisms.
 
-git clone https://github.com/tripathi-jii/GhostMode.git
+* 👆 **Biometric Authentication**
+  Supports device biometric authentication such as fingerprint or face authentication where available.
 
-2. Open the project
+* 🛡️ **Privacy-Focused Architecture**
+  Designed with local-first storage and minimal exposure of sensitive information.
 
-Open the cloned project in Android Studio.
+* 📱 **Modern Android UI**
+  Built using **Jetpack Compose** for a modern and responsive interface.
 
-3. Sync Gradle
+---
 
-Allow Android Studio to download the required dependencies and complete Gradle synchronization.
+## 🖼️ App Preview
 
-4. Run the application
+> Add your application screenshots here.
 
-Connect an Android device or start an Android Emulator and click Run ▶ in Android Studio.
+| Home / Decoy Interface | Authentication    | Private Vault      |
+| ---------------------- | ----------------- | ------------------ |
+| 📱 Add Screenshot      | 🔐 Add Screenshot | 🖼️ Add Screenshot |
 
-🔐 Security
+You can add screenshots using:
+
+```md
+![GhostMode Home](screenshots/home.png)
+![Authentication](screenshots/authentication.png)
+![Private Vault](screenshots/vault.png)
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology                    | Usage                         |
+| ----------------------------- | ----------------------------- |
+| **Kotlin**                    | Application development       |
+| **Jetpack Compose**           | Modern UI                     |
+| **Android Studio**            | Development environment       |
+| **Gradle**                    | Build & dependency management |
+| **Android Cryptography APIs** | Data protection               |
+| **Biometric Authentication**  | Secure authentication         |
+| **Android Local Storage**     | Local data/media storage      |
+
+---
+
+## 🏗️ Project Architecture
+
+GhostMode follows a modular structure where different responsibilities are separated into dedicated packages.
+
+```text
+GhostMode/
+│
+├── app/
+│   │
+│   └── src/
+│       └── main/
+│           │
+│           ├── java/
+│           │   └── com/
+│           │       └── vaitri/
+│           │           └── ghostmode/
+│           │               │
+│           │               ├── login/
+│           │               │   ├── LoginScreen.kt
+│           │               │   └── Authentication.kt
+│           │               │
+│           │               ├── screens/
+│           │               │   ├── HomeScreen.kt
+│           │               │   ├── VaultScreen.kt
+│           │               │   └── NotesScreen.kt
+│           │               │
+│           │               ├── security/
+│           │               │   ├── Encryption.kt
+│           │               │   └── BiometricHelper.kt
+│           │               │
+│           │               └── ui/
+│           │                   ├── theme/
+│           │                   ├── components/
+│           │                   └── navigation/
+│           │
+│           └── res/
+│               ├── drawable/
+│               ├── mipmap/
+│               └── values/
+│
+├── gradle/
+│
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+│
+├── screenshots/
+│   ├── home.png
+│   ├── authentication.png
+│   └── vault.png
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+---
+
+## 🔄 Application Flow
+
+```text
+                    ┌──────────────────┐
+                    │    GhostMode     │
+                    │      Launch      │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │  Decoy Interface │
+                    │   Notes Screen   │
+                    └────────┬─────────┘
+                             │
+                      Authentication
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   Biometric /    │
+                    │   Authentication │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   Private Vault  │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │ Private Photos & │
+                    │   Sensitive Data │
+                    └──────────────────┘
+```
+
+---
+
+## 🔐 Security & Privacy
 
 GhostMode is designed with privacy and secure local storage in mind.
 
-Sensitive data is intended to be protected using encryption and Android's security mechanisms.
+The application explores Android security mechanisms such as:
 
-«Never commit API keys, passwords, signing keys, keystores, or other secrets to this repository.»
+* 🔒 Local encrypted storage
+* 👆 Biometric authentication
+* 🔑 Secure authentication mechanisms
+* 📱 Device-level security
+* 🛡️ Minimal exposure of sensitive data
+* 🚫 No unnecessary external data sharing
 
-📂 Project Structure
+### ⚠️ Important
 
-GhostMode/
-├── app/
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/vaitri/ghostmode/
-│           │       ├── login/
-│           │       ├── screens/
-│           │       ├── security/
-│           │       └── ui/
-│           └── res/
-├── gradle/
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
+GhostMode should **not be considered a professionally audited security product**.
 
-🎯 Purpose
+The actual security level depends on the implementation, Android version, device security, encryption/key-management strategy, and application configuration.
 
-The purpose of GhostMode is to explore how Android applications can implement privacy-focused features such as secure local storage, authentication, encryption, and discreet user interfaces.
+### 🚨 Never Commit Secrets
 
-⚠️ Disclaimer
+Never commit the following to the repository:
 
-GhostMode is an educational/project application. Users are responsible for complying with applicable laws and regulations when using the application.
+```text
+❌ API Keys
+❌ Passwords
+❌ Private Keys
+❌ Signing Keys
+❌ Keystores
+❌ Authentication Tokens
+❌ Other Sensitive Credentials
+```
 
-👨‍💻 Developer
+Use `.gitignore` and secure local configuration for sensitive development data.
 
-Vaibhav Tripathi
+---
 
-GitHub: https://github.com/tripathi-jii
+## 📱 Requirements
 
-📄 License
+Before running GhostMode, make sure you have:
 
-This project is currently intended for educational and development purposes.
+* Android **12 or higher**
+* Android Studio
+* Kotlin
+* Gradle
+* Android SDK
+* Android Emulator or physical Android device
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/tripathi-jii/GhostMode.git
+```
+
+### 2️⃣ Open in Android Studio
+
+Open the cloned **GhostMode** folder in Android Studio.
+
+### 3️⃣ Sync Gradle
+
+Allow Android Studio to download the required dependencies and complete Gradle synchronization.
+
+### 4️⃣ Connect a Device
+
+You can either:
+
+* Connect a physical Android device with USB debugging enabled
+* Start an Android Emulator
+
+### 5️⃣ Run the Application
+
+Click:
+
+```text
+Run ▶
+```
+
+in Android Studio.
+
+---
+
+## 🧪 Development
+
+For development, the recommended workflow is:
+
+```text
+Clone Repository
+       ↓
+Open in Android Studio
+       ↓
+Sync Gradle
+       ↓
+Build Project
+       ↓
+Run Emulator / Device
+       ↓
+Test Features
+       ↓
+Commit Changes
+```
+
+---
+
+## 📂 Important Directories
+
+### `login/`
+
+Contains authentication-related components.
+
+```text
+login/
+├── LoginScreen.kt
+└── Authentication.kt
+```
+
+### `screens/`
+
+Contains the main application screens.
+
+```text
+screens/
+├── HomeScreen.kt
+├── VaultScreen.kt
+└── NotesScreen.kt
+```
+
+### `security/`
+
+Contains security-related functionality.
+
+```text
+security/
+├── Encryption.kt
+└── BiometricHelper.kt
+```
+
+### `ui/`
+
+Contains reusable UI components, themes, and navigation.
+
+```text
+ui/
+├── theme/
+├── components/
+└── navigation/
+```
+
+---
+
+## 🎯 Project Goals
+
+The main goal of GhostMode is to explore practical Android development concepts including:
+
+* Android application architecture
+* Jetpack Compose
+* Secure local storage
+* Encryption
+* Biometric authentication
+* Privacy-oriented UI design
+* Android security APIs
+* Modular project organization
+
+---
+
+## 🔮 Future Improvements
+
+Possible future enhancements include:
+
+* 🔐 Stronger key-management architecture
+* 🖼️ Support for additional media types
+* 📁 Private folders/albums
+* 🔍 Secure media search
+* 🌙 Improved dark/light themes
+* 🔄 Secure backup and restore
+* 🔒 Automatic vault locking
+* 🧹 Secure deletion mechanisms
+* 📊 Security/activity logs
+* 🎨 Improved animations and UI/UX
+* 🧪 Automated security and UI testing
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+### Contribution Steps
+
+```bash
+# Fork the repository
+
+# Clone your fork
+git clone <your-fork-url>
+
+# Create a new branch
+git checkout -b feature/new-feature
+
+# Make your changes
+
+# Commit your changes
+git commit -m "Add new feature"
+
+# Push the branch
+git push origin feature/new-feature
+```
+
+Then create a **Pull Request**.
+
+---
+
+## 👨‍💻 Developer
+
+### Vaibhav Tripathi
+
+🔗 GitHub:
+https://github.com/tripathi-jii
+
+---
+
+## 📄 License
+
+This project is currently intended for **educational and development purposes**.
+
+If you plan to distribute GhostMode publicly, add an appropriate open-source license such as **MIT**, **Apache-2.0**, or another license that matches your intended usage.
+
+---
+
+## ⚠️ Disclaimer
+
+GhostMode is an educational/project application created to explore Android privacy and security concepts.
+
+Users are responsible for using the application in accordance with applicable laws, regulations, and platform policies.
+
+The application should not be considered a substitute for professionally audited secure-storage software.
+
+---
+
+<div align="center">
+
+### 👻 GhostMode
+
+**Privacy • Security • Simplicity**
+
+Made with ❤️ using Kotlin & Jetpack Compose
+
+</div>
